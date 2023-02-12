@@ -15,9 +15,9 @@ public class NewController {
     CategoryService categoryService;
 
     @PostMapping()
-    public ResponseEntity addCategory(@RequestBody Category category)
+    public ResponseEntity addCategory(@RequestBody Category cct)
     {
-        return ResponseEntity.ok(this.categoryService.addCategory(category));
+        return ResponseEntity.ok(this.categoryService.addCategory(cct));
     }
 
     @GetMapping()
