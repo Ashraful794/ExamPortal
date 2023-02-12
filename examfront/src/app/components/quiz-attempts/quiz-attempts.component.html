@@ -1,0 +1,55 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2">
+        <app-user-sidebar></app-user-sidebar>
+      </div>
+
+
+      <div class="col-md-10">
+
+        <mat-card class="mt-10">
+          <mat-card-content >
+            <h1>Quiz Ateempts</h1>
+          </mat-card-content>
+        </mat-card>
+        <br>
+
+        <mat-card *ngFor="let q of quizAttempts" class="mt10">
+          <mat-card-title>
+            <h1>{{q.quiz.title}}</h1>
+          </mat-card-title>
+          <mat-card-subtitle>
+            <h3>Ateempted Date : <b>{{q.date}}</b></h3>
+          </mat-card-subtitle>
+          <p><b>{{q.quiz.description}}</b></p>
+          <mat-card-content>
+
+
+            <div class="row mt10">
+              <div class="col-md-6">
+                <b>Marks : {{q.marks}}</b>
+              </div>
+              <div class="col-md-6">
+               <b>Max Marks : {{q.quiz.maxMarks}}</b>
+              </div>
+            </div>
+
+            <div class="row mt10">
+              <div class="col-md-6">
+                <b>Question Attempts : {{q.questions_Attempts}}</b>
+              </div>
+              <div class="col-md-6">
+               <b>Correct Answer : {{q.correct_answer}}</b>
+              </div>
+            </div>
+
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+
+    </div>
+  </div>
+</div>

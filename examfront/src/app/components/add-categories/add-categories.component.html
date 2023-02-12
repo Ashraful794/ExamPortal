@@ -1,0 +1,42 @@
+<mat-card>
+
+<h1>Add New Category</h1>
+
+<mat-card-content>
+
+  <div class="bootstrap-wrapper">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+
+
+        <form (ngSubmit)="onSubmit()">
+          
+          <mat-form-field class="w100" appearance="outline">
+
+            <mat-label>Title</mat-label>
+
+            <input autofocus type="text" name="title" matInput placeholder="Enter Here" [(ngModel)]="category.title">
+
+          </mat-form-field>
+
+          <mat-form-field class="w100" appearance="outline">
+            <mat-label>Description</mat-label>
+            <textarea type="text" matInput name="description" placeholder="Enter Here" row="15" [(ngModel)]="category.description"></textarea>
+          </mat-form-field>
+
+          <div class="containeer text-center">
+            <button mat-raised-button color="primary">Add</button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+</mat-card-content>
+</mat-card>

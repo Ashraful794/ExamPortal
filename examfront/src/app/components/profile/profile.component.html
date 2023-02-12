@@ -1,0 +1,72 @@
+<div class="bootstrap-wrapper">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-2" *ngIf="authority=='Normal'">
+        <app-user-sidebar></app-user-sidebar>
+      </div>
+      <div class="col-md-2" *ngIf="authority=='ADMIN'">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="col-md-10">
+        <mat-card>
+          <h1>Your Profile Details</h1>
+          <mat-card-content>
+            <div class="bootstrap-wrapper">
+              <div class="container">
+                <div class="container text-center">
+                  <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5F6_OcqlG2OXpJE4z0MIvFHloB-J5K1pwbA&usqp=CAU" alt="" class="profile-image responsive-image">
+                  <h1 >{{user.firstName}} {{user.lastName}}</h1>
+                  <table class="table text-center">
+                    <tr>
+                      <td>Username</td>
+                      <td>{{user.username}}</td>
+                    </tr>
+                    <tr>
+                      <td>Userid</td>
+                      <td>{{user.id}}</td>
+                    </tr>
+                    <tr>
+                      <td>Phone</td>
+                      <td>{{user.phone}}</td>
+                    </tr>
+                    <tr>
+                      <td>Role</td>
+                      <td>{{user.authorities[0].authority}}</td>
+                    </tr>
+
+                    <tr>
+                      <td>Status</td>
+                      <td>{{user.enabled?"Active":"Not Active"}}</td>
+                    </tr>
+
+
+                  </table>
+
+                </div>
+
+
+
+                <div class="row">
+                  <div class="col-nd-10 offset-md-1">
+
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <mat-card-actions class="text-center">
+              <button mat-raised-button color="primary">Update</button>
+              <button mat-raised-button color="accent">Share</button>
+            </mat-card-actions>
+          </mat-card-content>
+        </mat-card>
+
+
+      </div>
+
+    </div>
+    </div>
+</div>
+
+
