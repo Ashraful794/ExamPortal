@@ -22,13 +22,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @EnableWebSecurity
 @Configuration
-@EnableGlobalMethodSecurity(prePostEnabled = true)
+//@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
 
     @Autowired
     JwtAuthenticationFilter jwtAuthenticationFilter;
-
-
 
     @Override
     protected void configure(HttpSecurity http) throws Exception {
@@ -36,8 +34,7 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
 
                 .antMatchers("/user/registration","/login").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
-//                .antMatchers("/user").hasAnyRole("USER","ADMIN")
-//                .antMatchers("/admin").hasAnyRole("ADMIN")
+                .antMatchers("/quesstions").access("hasRole('ROLE_ADMIN')")
                 .anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

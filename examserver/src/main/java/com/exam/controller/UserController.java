@@ -25,15 +25,12 @@ public class UserController {
     @PostMapping("/registration")
     public User createUser(@RequestBody User user) throws Exception
     {
-
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         user.setProfile("default.png");
         Set<UserRole> roles=new HashSet<>();
         Role role=new Role();
-
-
         role.setRoleId(45L);
-        role.setRoleName("Normal");
+        role.setRoleName("ROLE_USER");
 
         UserRole userRole=new UserRole();
         userRole.setUser(user);

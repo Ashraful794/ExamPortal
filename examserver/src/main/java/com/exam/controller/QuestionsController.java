@@ -5,6 +5,7 @@ import com.exam.model.Quiz;
 import com.exam.service.QuestionsService;
 import com.exam.service.QuizService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -21,6 +22,7 @@ public class QuestionsController {
 
     @Autowired
     QuizService quizService;
+
 
     @PostMapping()
     public ResponseEntity postQuestions(@RequestBody Questions questions)
