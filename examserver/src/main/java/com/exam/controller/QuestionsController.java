@@ -17,11 +17,14 @@ import java.util.concurrent.atomic.AtomicReference;
 @CrossOrigin("http://localhost:4200")
 
 public class QuestionsController {
-    @Autowired
-    QuestionsService questionsService;
 
-    @Autowired
-    QuizService quizService;
+    private static QuestionsService questionsService;
+    private static QuizService quizService;
+    public QuestionsController(QuestionsService questionsService,QuizService quizService)
+    {
+        this.questionsService=questionsService;
+        this.quizService=quizService;
+    }
 
 
     @PostMapping()
