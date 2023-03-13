@@ -11,8 +11,13 @@ import org.springframework.web.bind.annotation.*;
 @RequestMapping("/quiz")
 @CrossOrigin("http://localhost:4200")
 public class QuizController {
-    @Autowired
-    QuizService quizService;
+
+    private static QuizService quizService;
+
+    public QuizController(QuizService quizService)
+    {
+        this.quizService=quizService;
+    }
 
     @PostMapping()
     public ResponseEntity addQuiz(@RequestBody Quiz quiz)
