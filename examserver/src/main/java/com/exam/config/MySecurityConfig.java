@@ -35,6 +35,8 @@ public class MySecurityConfig  extends WebSecurityConfigurerAdapter {
                 .antMatchers("/user/registration","/login").permitAll()
                 .antMatchers(HttpMethod.OPTIONS).permitAll()
                 .antMatchers("/quesstions").access("hasRole('ROLE_ADMIN')")
+                .antMatchers("api/admin").access("hasRole('ROLE_ADMIN')")
+
                 .anyRequest().authenticated()
                 .and().exceptionHandling().and().sessionManagement()
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS)

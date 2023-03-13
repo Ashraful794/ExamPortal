@@ -1,5 +1,6 @@
 package com.exam.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import lombok.*;
 
 import javax.persistence.*;
@@ -18,6 +19,7 @@ public class QuizAttempts {
     private Long id;
 
     @ManyToOne
+    @JsonBackReference
     private User user;
 
     @Transient

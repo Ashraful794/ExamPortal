@@ -1,6 +1,7 @@
 package com.exam.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -33,7 +34,7 @@ public class User implements UserDetails {
     private Set<UserRole> userRoles=new HashSet<>();
 
     @OneToMany(mappedBy = "user")
-    @JsonIgnore
+    @JsonManagedReference
     private Set<QuizAttempts> quizAttempts;
 
     @Override
