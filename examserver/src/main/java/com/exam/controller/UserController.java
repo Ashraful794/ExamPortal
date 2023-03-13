@@ -16,11 +16,14 @@ import java.util.Set;
 @CrossOrigin("http://localhost:4200")
 public class UserController {
 
-    @Autowired
-    UserService userService;
+    private static UserService userService;
+    private static PasswordEncoder passwordEncoder;
 
-    @Autowired
-    PasswordEncoder passwordEncoder;
+    private UserController(UserService userService, PasswordEncoder passwordEncoder)
+    {
+        this.userService=userService;
+        this.passwordEncoder=passwordEncoder;
+    }
 
     @PostMapping("/registration")
     public User createUser(@RequestBody User user) throws Exception
