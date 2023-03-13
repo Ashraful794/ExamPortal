@@ -17,8 +17,13 @@ import java.util.Date;
 @RequestMapping("/quizattempt")
 @CrossOrigin("http://localhost:4200")
 public class QuizAttemptController {
-    @Autowired
-    QuizAttemptService quizAttemptService;
+
+    private static QuizAttemptService quizAttemptService;
+
+    public QuizAttemptController(QuizAttemptService quizAttemptService)
+    {
+        this.quizAttemptService=quizAttemptService;
+    }
 
     @PostMapping()
     public ResponseEntity addQuizAttempt(@RequestBody QuizAttempts quizAttempts)
